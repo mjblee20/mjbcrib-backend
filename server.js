@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 // allows us to connect to MongoDB Database
 const mongoose = require('mongoose');
-const path = require('path');
+// allows to parse JSON data from requests
 const bodyParser = require('body-parser');
 
 require('dotenv').config();
@@ -17,8 +17,6 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.json());
-
-
 
 // Setting up connection to the MongDB Atlas
 const uri = process.env.ATLAS_URI;
@@ -41,15 +39,6 @@ app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
 app.use('/habits', habitsRouter);
 app.use('/blogs', blogsRouter);
-
-if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static('build'));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
-  });
-}
 
 app.listen(port, host, function() {
   console.log(`api running on port ${port}`);

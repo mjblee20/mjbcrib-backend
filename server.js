@@ -40,6 +40,11 @@ app.use('/users', usersRouter);
 app.use('/habits', habitsRouter);
 app.use('/blogs', blogsRouter);
 
+// showing that app is working
+app.get('/', function(req, res) {
+  res.json('you did it');
+});
+
 app.listen(port, host, function() {
   console.log(`api running on port ${port}`);
  });

@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 // Setting up connection to the MongDB Atlas
-const uri = process.env.ATLAS_URI;
+const uri = 'mongodb+srv://mjblee20:workaholic@UW5105!@mjbcrib-sjehz.gcp.mongodb.net/test?retryWrites=true&w=majority'; //process.env.ATLAS_URI
 mongoose
   .connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
   .catch(err => console.log(err))

@@ -42,7 +42,7 @@ app.use('/blogs', blogsRouter);
 
 // showing that app is working
 app.get('/', function(req, res) {
-  res.json('you did it');
+  res.send('you did it');
 });
 
 app.listen(port, host, function() {

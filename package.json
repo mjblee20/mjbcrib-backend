@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Server of my portfolio page",
   "engines": {
-    "node": "12.12.0"
+    "node": "12.12.0",
+    "npm": "6.13.2",
   },
   "main": "server.js",
   "scripts": {
